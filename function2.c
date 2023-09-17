@@ -3,7 +3,6 @@
 /**
  * _copy - function to copy chars & make str
  * @c1: char
- * @c2: char
  * Return: pointer to str
  */
 char *_copy(char c1)
