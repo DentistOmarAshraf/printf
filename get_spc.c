@@ -29,9 +29,9 @@ int _strcmp(char *s1, char *s2)
 void (*get_spc(char *s))(int*, va_list)
 {
 	spc_t spc[] = {
-		{"%c", print_char},
-		{"%s", print_str},
-		{"%%", print_prcnt},
+		{"c", print_char},
+		{"s", print_str},
+		{"%", print_prcnt},
 		{NULL, NULL}
 	};
 	int i;

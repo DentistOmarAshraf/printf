@@ -25,12 +25,16 @@ int main(void)
 	y = printf("%%o\n");
 	printf("_printf == %d || printf == %d\n\n", x, y);
 
-	x = _printf("% \n");
-	y = printf("% \n");
-	printf("_printf == %d || printf == %d\n\n", x, y);
+	x = _printf("%   ");
+	y = printf("%   ");
+	printf("_printf == %d || printf == %d\n\n",x ,y);
 
 	x = _printf(NULL);
 	y = printf(NULL);
+	printf("_printf == %d || printf == %d\n\n", x, y);
+	
+	x = _printf("css%ccs%scscscsc\n", 't', "test");
+	y = printf("css%ccs%scscscsc\n", 't', "test");
 	printf("_printf == %d || printf == %d\n\n", x, y);
 
 	return (0);

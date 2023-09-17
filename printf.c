@@ -13,7 +13,7 @@ int _printf(const char * const format, ...)
 	char *str;
 	void (*f)(int*, va_list);
 
-	if (format == NULL)
+	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
 	va_start(args, format);
 	count = 0;
@@ -21,7 +21,9 @@ int _printf(const char * const format, ...)
 	{
 		if (format[len] == '%')
 		{
-			str = _copy(format[len], format[len + 1]);
+			while (format[len + 1] == ' ')
+				len++;
+			str = _copy(format[len + 1]);
 			if (str == NULL)
 				return (-1);
 			f = get_spc(str);

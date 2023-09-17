@@ -6,16 +6,15 @@
  * @c2: char
  * Return: pointer to str
  */
-char *_copy(char c1, char c2)
+char *_copy(char c1)
 {
 	char *str;
 
-	str = malloc(sizeof(char) * 3);
+	str = malloc(sizeof(char) * 2);
 	if (str == NULL)
 		return (NULL);
 	str[0] = c1;
-	str[1] = c2;
-	str[2] = '\0';
+	str[1] = '\0';
 
 	return (str);
 }
