@@ -22,7 +22,11 @@ int _printf(const char * const format, ...)
 		if (format[len] == '%')
 		{
 			while (format[len + 1] == ' ')
+			{
 				len++;
+				if (!format[len + 1])
+					return (-1);
+			}
 			str = _copy(format[len + 1]);
 			if (str == NULL)
 				return (-1);
