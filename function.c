@@ -27,6 +27,9 @@ void print_str(int *i, va_list args)
 	char *s;
 
 	s = va_arg(args, char *);
+	if (s == NULL)
+		s = "(null)";
+
 	for (len = 0 ; s[len] ; len++)
 	{
 		write(1, &s[len], 1);

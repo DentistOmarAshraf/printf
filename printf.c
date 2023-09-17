@@ -13,7 +13,7 @@ int _printf(const char * const format, ...)
 	char *str;
 	void (*f)(int*, va_list);
 
-	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
+	if (format == NULL)
 		return (-1);
 	va_start(args, format);
 	count = 0;
@@ -42,7 +42,7 @@ int _printf(const char * const format, ...)
 			len++;
 			continue;
 		}
-		count += write(1, &(format[len]), 1);
+			count += write(1, &(format[len]), 1);
 	}
 	va_end(args);
 	return (count);
