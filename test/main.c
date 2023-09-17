@@ -6,8 +6,8 @@ int main(void)
 	int x, y;
 	char *str = "hello ksdmfosfdk;oewkf %depo'wcmeopfmceowkfmepofmkewpcmke'pom\nmwecokdmewpofkm";
 
-	x = _printf("%s, %c\n", NULL, NULL);
-	y = printf("%s, %c\n", NULL, NULL);
+	x = _printf("%");
+	y = printf("%");
 	printf("_printf == %d || printf == %d\n\n", x, y);
 
 	x = _printf("Let's try to printf a simple sentence.\n");
