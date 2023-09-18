@@ -8,6 +8,12 @@ int main(void)
 	x = _printf("%d\n", 0);
 	y = printf("%d\n", 0);
 	printf("_printf = %d || printf = %d\n\n", x, y);
+	x = _printf("%i\n", 9);
+	y = printf("%i\n", 9);
+	printf("_printf = %d || printf = %d\n\n", x, y);
+	x = _printf("%d\n", 45440);
+	y = printf("%d\n", 450);
+	printf("_printf = %d || printf = %d\n\n", x, y);
 	x = _printf("%d\n", -450);
 	y = printf("%d\n", -450);
 	printf("_printf = %d || printf = %d\n\n", x, y);

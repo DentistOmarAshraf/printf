@@ -61,28 +61,30 @@ void print_prcnt(int *i, va_list args)
  */
 void print_num(int *i, va_list args)
 {
-	int j, x, len;
+	int j, len, x;
 	char c;
 	char *s;
+	unsigned int num;
 
 	x = va_arg(args, int);
-	if (x == 0)
+	if (x >= 0 && x <= 9)
 	{
 		c = x + '0';
 		*i += write(1, &c, 1);
+		return;
 	}
 	if (x < 0)
 	{
 		c = '-';
 		*i += write(1, &c, 1);
-		x *= -1;
+		num = x * -1;
 	}
-	len = _count(x);
+	len = _count(num);
 	s = malloc(sizeof(char) * (len + 1));
 	for (j = 0 ; j < len ; j++)
 	{
-		s[j] = (x % 10) + '0';
-		x = x / 10;
+		s[j] = (num % 10) + '0';
+		num = num / 10;
 	}
 	s[j] = '\0';
 	for (j = len - 1 ; j >= 0 ; j--)
