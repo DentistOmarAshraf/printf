@@ -52,3 +52,35 @@ void print_prcnt(int *i, va_list args)
 	write(1, &c, 1);
 	*i += 1;
 }
+
+/**
+ * print_num - print number
+ * @i: pointer to int
+ * @args: valist
+ * Return: NONE
+ */
+void print_num(int *i, va_list args)
+{
+	int j, x, len;
+	char c;
+	char *s;
+
+	x = va_arg(args, int);
+	if (x < 0)
+	{
+		c = '-';
+		*i += write(1, &c, 1);
+		x *= -1;
+	}
+	len = _count(x);
+	s = malloc(sizeof(char) * (len + 1));
+	for (j = 0 ; j < len ; j++)
+	{
+		s[j] = (x % 10) + '0';
+		x = x / 10;
+	}
+	s[j] = '\0';
+	for (j = len - 1 ; j >= 0 ; j--)
+		*i += write(1, &(s[j]), 1);
+	free(s);
+}

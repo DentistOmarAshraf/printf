@@ -19,7 +19,9 @@ int _printf(const char * const format, ...);
 void print_char(int *, va_list);
 void print_str(int *, va_list);
 void print_prcnt(int *, va_list);
+void print_num(int *, va_list);
 char *_copy(char);
+int _count(int);
 void (*get_spc(char *s))(int *, va_list);
 
 #endif

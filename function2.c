@@ -17,3 +17,16 @@ char *_copy(char c1)
 
 	return (str);
 }
+
+/**
+ * _count - this function for counting width of number
+ * Description: helper function for print int
+ * @x: int
+ * Return: int
+ */
+int _count(int x)
+{
+	if (x == 0)
+		return (0);
+	return (1 + _count(x / 10));
+}
