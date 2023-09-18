@@ -109,16 +109,22 @@ void print_bin(int *i, va_list args)
 	int j, len;
 	int x;
 	char *s;
+	unsigned int num;
 
 	x = va_arg(args, int);
-	len = _count_bin(x);
+	if (x < 0)
+		num = x * -1;
+	else
+		num = x;
+
+	len = _count_bin(num);
 	s = malloc(sizeof(char) * (len + 1));
 	if (s == NULL)
 		exit(98);
 	for (j = 0 ; j < len ; j++)
 	{
-		s[j] = (x % 2) + '0';
-		x = x / 2;
+		s[j] = (num % 2) + '0';
+		num = num / 2;
 	}
 	s[j] = '\0';
 	for (j = len - 1 ; j >= 0 ; j--)
