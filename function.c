@@ -97,3 +97,31 @@ void print_num(int *i, va_list args)
 		*i += write(1, &(s[j]), 1);
 	free(s);
 }
+
+/**
+ * print_bin - function to convert number to binary
+ * @i: pointer to int
+ * @args: va_list
+ * Return: NONE
+ */
+void print_bin(int *i, va_list args)
+{
+	int j, len;
+	int x;
+	char *s;
+
+	x = va_arg(args, int);
+	len = _count_bin(x);
+	s = malloc(sizeof(char) * (len + 1));
+	if (s == NULL)
+		exit(98);
+	for (j = 0 ; j < len ; j++)
+	{
+		s[j] = (x % 2) + '0';
+		x = x / 2;
+	}
+	s[j] = '\0';
+	for (j = len - 1 ; j >= 0 ; j--)
+		*i += write(1, &(s[j]), 1);
+	free(s);
+}

@@ -20,8 +20,10 @@ void print_char(int *, va_list);
 void print_str(int *, va_list);
 void print_prcnt(int *, va_list);
 void print_num(int *, va_list);
+void print_bin(int *, va_list);
 char *_copy(char);
 int _count(int);
+int _count_bin(int);
 void (*get_spc(char *s))(int *, va_list);
 
 #endif

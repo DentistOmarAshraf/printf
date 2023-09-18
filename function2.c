@@ -30,3 +30,16 @@ int _count(int x)
 		return (0);
 	return (1 + _count(x / 10));
 }
+
+/**
+ * _count_bin - function counting width of number in binary
+ * Description: this function designed for malloc array of binary
+ * @x: int
+ * Return: int
+ */
+int _count_bin(int x)
+{
+	if (x <= 1)
+		return (1);
+	return (1 + _count_bin(x / 2));
+}
