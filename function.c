@@ -67,7 +67,7 @@ void print_num(int *i, va_list args)
 	unsigned int num;
 
 	x = va_arg(args, int);
-	if (x >= 0 && x <= 9)
+	if (x == 0)
 	{
 		c = x + '0';
 		*i += write(1, &c, 1);
@@ -76,11 +76,17 @@ void print_num(int *i, va_list args)
 	if (x < 0)
 	{
 		c = '-';
-		*i += write(1, &c, 1);
 		num = x * -1;
+		*i += write(1, &c, 1);
+	}
+	else
+	{
+		num = x;
 	}
 	len = _count(num);
 	s = malloc(sizeof(char) * (len + 1));
+	if (s == NULL)
+		exit(98);
 	for (j = 0 ; j < len ; j++)
 	{
 		s[j] = (num % 10) + '0';
