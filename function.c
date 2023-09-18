@@ -66,6 +66,11 @@ void print_num(int *i, va_list args)
 	char *s;
 
 	x = va_arg(args, int);
+	if (x == 0)
+	{
+		c = x + '0';
+		*i += write(1, &c, 1);
+	}
 	if (x < 0)
 	{
 		c = '-';
