@@ -115,7 +115,8 @@ void print_bin(int *i, va_list args)
 	if (num == 0)
 	{
 		c = '0';
-		*i += write(1, &c, 1);
+		write(1, &c, 1);
+		*i = -1;
 	}
 	if (num > 0)
 	{
