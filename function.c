@@ -119,7 +119,7 @@ void print_bin(int *i, va_list args)
 	}
 	if (num > 0)
 	{
-		len = _count_bin(num);
+		len = 8;
 		s = malloc(sizeof(char) * (len + 1));
 		if (s == NULL)
 			exit(98);
