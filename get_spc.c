@@ -35,6 +35,7 @@ void (*get_spc(char *s))(int*, va_list)
 		{"d", print_num},
 		{"i", print_num},
 		{"b", print_bin},
+		{"r", print_rev},
 		{NULL, NULL}
 	};
 	int i;

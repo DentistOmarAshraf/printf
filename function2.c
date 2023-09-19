@@ -43,3 +43,15 @@ int _count_bin(int x)
 		return (1);
 	return (1 + _count_bin(x / 2));
 }
+
+/**
+ * _strlen - string length
+ * @str: pointer to str
+ * Return: int
+ */
+int _strlen(char *str)
+{
+	if (*str == '\0')
+		return (0);
+	return (1 + _strlen(str + 1));
+}
