@@ -3,8 +3,11 @@
 
 int main(void)
 {
-	int x = _printf("%b\n", 98);
-	int y = printf("%b\n", 98);
-	printf("_printf = %d || printf = %d\n", x, y);
+	int x;
+
+	x = _printf("%b\n", -98);
+	printf("_printf = %d\n", x);
+	x = _printf("%b\n", 98);
+	printf("_printf = %d\n", x);
 	return (0);
 }
