@@ -127,7 +127,7 @@ void print_bin(int *i, va_list args)
 		num = num / 2;
 	}
 	s[j] = '\0';
-	for (j = len - 2 ; j >= 0 ; j--)
+	for (j = len - 1 ; j >= 0 ; j--)
 		*i += write(1, &(s[j]), 1);
 	free(s);
 }
