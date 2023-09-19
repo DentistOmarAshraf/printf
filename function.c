@@ -112,7 +112,13 @@ void print_bin(int *i, va_list args)
 	unsigned int num;
 
 	x = va_arg(args, int);
-	num = x;
+	if (x < 0)
+	{
+		num = -1 * x;
+	}
+	else
+		num = x;
+
 	len = _count_bin(num);
 	s = malloc(sizeof(char) * (len + 1));
 	if (s == NULL)
