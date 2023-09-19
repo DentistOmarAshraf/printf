@@ -119,11 +119,11 @@ void print_bin(int *i, va_list args)
 	}
 	if (num > 0)
 	{
-		len = 8;
+		len = _count_bin(num);
 		s = malloc(sizeof(char) * (len + 1));
 		if (s == NULL)
 			exit(98);
-		for (j = 0 ; j < len ; j++)
+		for (j = 0 ; j < len && num > 0 ; j++)
 		{
 			s[j] = (num % 2) + '0';
 			num = num / 2;
