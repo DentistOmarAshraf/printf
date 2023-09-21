@@ -116,17 +116,18 @@ void print_bin(int *i, va_list args)
 		c = '0';
 		*i += write(1, &c, 1);
 	}
-	len = _count_bin(num) + 1;
+	len = _count_bin(num);
 	s = malloc(sizeof(char) * (len + 1));
 	if (s == NULL)
 		exit(98);
-	for (j = 1 ; j < len ; j++)
+	for (j = 0 ; j <= len ; j++)
 	{
 		s[j] = (num % 2) + '0';
 		num = num / 2;
 	}
 	s[j] = '\0';
-	for (j = len ; j > 0 ; j--)
+	for (j = len - 2 ; j > 0 ; j--)
 		*i += write(1, &(s[j]), 1);
+	*i += write(1, &s[0], 1);
 	free(s);
 }
