@@ -38,6 +38,7 @@ void (*get_spc(char *s))(int*, va_list)
 		{"r", print_rev},
 		{"R", print_rot},
 		{"u", print_un},
+		{"o", print_oc},
 		{NULL, NULL}
 	};
 	int i;

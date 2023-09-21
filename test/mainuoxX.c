@@ -21,5 +21,12 @@ int main(void)
 	i = _printf("%u\n", UINT_MAX);
 	j = printf("%u\n", UINT_MAX);
 	_printf("_printf = %d || printf = %d\n", i, j);
+	_printf("------------------------------------\n");
+	i = _printf("%o\n", 1024);
+	j = printf("%o\n", 1024);
+	_printf("_printf = %d || printf = %d\n", i, j);
+	i = _printf("%o\n", -1024);
+	j = printf("%o\n", -1024);
+	_printf("_printf = %d || printf = %d\n", i, j);
 	return (0);
 }
