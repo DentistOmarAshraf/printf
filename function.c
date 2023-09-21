@@ -106,9 +106,8 @@ void print_num(int *i, va_list args)
  */
 void print_bin(int *i, va_list args)
 {
-	int j, len;
 	char *s;
-	unsigned int num;
+	unsigned int num, len, j;
 	char c;
 
 	num = va_arg(args, unsigned int);
@@ -117,20 +116,17 @@ void print_bin(int *i, va_list args)
 		c = '0';
 		*i += write(1, &c, 1);
 	}
-	if (num > 0)
+	len = _count_bin(num) + 1;
+	s = malloc(sizeof(char) * (len + 2));
+	if (s == NULL)
+		exit(98);
+	for (j = 1 ; j < len ; j++)
 	{
-		len = _count_bin(num);
-		s = malloc(sizeof(char) * (len + 1));
-		if (s == NULL)
-			exit(98);
-		for (j = 0 ; j < len && num > 0 ; j++)
-		{
-			s[j] = (num % 2) + '0';
-			num = num / 2;
-		}
-		s[j] = '\0';
-		for (j = len - 2 ; j >= 0 ; j--)
-			*i += write(1, &(s[j]), 1);
-		free(s);
+		s[j] = (num % 2) + '0';
+		num = num / 2;
 	}
+	s[j] = '\0';
+	for (j = len ; j > 0 ; j--)
+		*i += write(1, &(s[j]), 1);
+	free(s);
 }

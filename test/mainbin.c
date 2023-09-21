@@ -1,17 +1,21 @@
 #include <stdio.h>
 #include "main.h"
+#include <limits.h>
 
 int main(void)
 {
 	int x;
 
-	x = _printf("%b\n", -98);
-	printf("_printf = %d\n", x);
 	x = _printf("%b\n", 98);
-	printf("_printf = %d\n", x);
-	_printf("%b\n", 3);
-	_printf("%b\n", 125);
-	x = _printf("%b\n", 0);
-	printf("%d\n",x);
+	_printf("_printf = %d\n", x);
+	x = _printf("%b\n", 1024);
+	_printf("(1024)_printf = %d\n", x);
+	x = _printf("%b\n", -1024);
+	printf("(-1024)_printf = %d\n", x);
+	x = _printf("%b\n", UINT_MAX);
+	printf("(UINT_MAX)_printf = %d\n", x);
+	x = _printf("%b\n", INT_MAX);
+	_printf("(INT_MAX)_printf = %d\n", x);
+
 	return (0);
 }
