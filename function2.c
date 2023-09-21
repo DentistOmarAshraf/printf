@@ -40,7 +40,7 @@ int _count(int x)
 int _count_bin(unsigned int x)
 {
 	if (x / 2 == 0 && x % 2 == 0)
-		return (1);
+		return (0);
 	return (1 + _count_bin(x / 2));
 }
 
