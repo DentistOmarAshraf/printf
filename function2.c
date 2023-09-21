@@ -43,6 +43,18 @@ int _count_bin(unsigned int x)
 		return (0);
 	return (1 + _count_bin(x / 2));
 }
+/**
+ * _count_un - function to count width of unsigned number
+ * Description: Using this function to count unsugned int
+ * @x: unsigned int
+ * Return: int
+ */
+int _count_un(unsigned int x)
+{
+	if (x / 10 == 0 && x % 10 == 0)
+		return (0);
+	return (1 + _count_un(x / 10));
+}
 
 /**
  * _strlen - string length

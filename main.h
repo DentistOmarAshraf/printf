@@ -23,9 +23,11 @@ void print_num(int *, va_list);
 void print_bin(int *, va_list);
 void print_rev(int *, va_list);
 void print_rot(int *, va_list);
+void print_un(int *, va_list);
 char *_copy(char);
 int _count(int);
 int _count_bin(unsigned int);
+int _count_un(unsigned int);
 int _strlen(char *);
 void (*get_spc(char *s))(int *, va_list);
 
