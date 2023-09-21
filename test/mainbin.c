@@ -16,6 +16,7 @@ int main(void)
 	printf("(UINT_MAX)_printf = %d\n", x);
 	x = _printf("%b\n", INT_MAX);
 	_printf("(INT_MAX)_printf = %d\n", x);
-
+	x = _printf("%b\n", 0);
+	_printf("%d\n", x);
 	return (0);
 }

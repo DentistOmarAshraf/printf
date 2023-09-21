@@ -115,6 +115,7 @@ void print_bin(int *i, va_list args)
 	{
 		c = '0';
 		*i += write(1, &c, 1);
+		return;
 	}
 	len = _count_bin(num);
 	s = malloc(sizeof(char) * (len + 1));
