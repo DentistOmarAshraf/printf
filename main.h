@@ -25,11 +25,14 @@ void print_rev(int *, va_list);
 void print_rot(int *, va_list);
 void print_un(int *, va_list);
 void print_oc(int *, va_list);
+void print_hexs(int *, va_list);
+void print_hexl(int *, va_list);
 char *_copy(char);
 int _count(int);
 int _count_bin(unsigned int);
 int _count_un(unsigned int);
 int _count_oc(unsigned int);
+int _count_hex(unsigned int);
 int _strlen(char *);
 void (*get_spc(char *s))(int *, va_list);
 
