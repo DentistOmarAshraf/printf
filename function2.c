@@ -37,7 +37,7 @@ int _count(int x)
  * @x: int
  * Return: int
  */
-unsigned int _count_bin(unsigned int x)
+int _count_bin(unsigned int x)
 {
 	if (x / 2 == 0 && x % 2 == 0)
 		return (1);
